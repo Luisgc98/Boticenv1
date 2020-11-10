@@ -1,1 +1,2 @@
-# Boticenv1
+# Botic
+## Prerequisitos
