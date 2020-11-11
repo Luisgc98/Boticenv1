@@ -68,7 +68,7 @@
     ```
     
     - Nos aparecerá la carpeta del archivo comprimido llamada "Python-3.7.4", entramos en ella y ejecutamos el siguiente comando para
-      configurar todo lo necesario y tener Python3.7.4 listo en su ordenador Linux.
+      configurar todo lo necesario y tener Python3.7.4 en su ordenador Linux.
     ```bash
         $ cd Python-3.7.4
         $ ./configure --enable-optimizations
