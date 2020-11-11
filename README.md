@@ -11,10 +11,10 @@
   primero necesitamos tener instalados ciertos prerequisitos:
 ```
 - Tener instalado Python en su versión 3.7.4
-  - Instalación en Windows:
+  ### - Instalación en Windows:
   
     - Para instalar Python en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) donde
-    descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
+      descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
     
     ![imagen windows1](https://miro.medium.com/max/2732/1*b5SZWxlBXkkhmAXjZgUWWg.png)
     
@@ -32,3 +32,25 @@
     
     ![imagen windows3](https://i.ytimg.com/vi/Wx8XU2L2k6Q/maxresdefault.jpg)
     
+    - Una vez acabando la instalación presionamos en el botón de "Close", y listo! Ya tendremos Python en su
+      versión 3.7.4 instalado en su ordenador.
+      
+    - Para verificarlo, abra su CMD y escriba el siguiente comando:
+    
+    ```cmd
+        >python -V
+        ```
+    ```cmd
+        # Resultado: 
+        Python 3.7.4
+    ```
+    
+  ### - Instalación en Linux
+  
+    - Antes de instalar Python en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
+      Python desde la fuente.
+      
+    ```bash
+        sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+    ```
+      
