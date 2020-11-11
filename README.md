@@ -20,7 +20,15 @@
     
     
     - Una vez descargado este archivo, nos dirigimos a la carpeta donde se ha guardado el archivo,
-    y ejecutamos el instalador.
+      y ejecutamos el instalador.
     
     - Nos aparecerá una pantalla como la siguiente: 
     ![imagen windows2](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/images/python/pythonsetup.jpg)
+
+    - Marcamos la casilla que dice "Add Python 3.7 to PATH", esto agregará la ruta de instalación de Python
+      a sus variables de entorno. Hacemos click en "Install now" y empezará a instalar el paquete.
+      
+    - Te aparecerá una pantalla con una barra de progreso como la siguiente:
+    
+    ![imagen windows3](https://i.ytimg.com/vi/Wx8XU2L2k6Q/maxresdefault.jpg)
+    
