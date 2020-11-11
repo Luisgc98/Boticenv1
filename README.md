@@ -39,18 +39,25 @@
     
     ```cmd
         >python -V
-        ```
+    ```
+    - Resultado:
     ```cmd
-        # Resultado: 
         Python 3.7.4
     ```
     
   ### - Instalación en Linux
   
     - Antes de instalar Python en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
-      Python desde la fuente.
+      Python desde la fuente. Sólo copie los siguientes comandos:
       
     ```bash
         sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+        sudo apt update
     ```
       
+    - Después de haber instalado estos paquetes, ahora debemos descargar el código fuente de
+      la versión 3.7.4 de Python de la [página oficial de Python](https://www.python.org/downloads/release/python-374/) con el comando wget:
+      
+    ```bash
+        wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+    ```
