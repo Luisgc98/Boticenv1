@@ -51,13 +51,35 @@
       Python desde la fuente. Sólo copie los siguientes comandos:
       
     ```bash
-        sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
-        sudo apt update
+        $ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+        $ sudo apt update
     ```
       
     - Después de haber instalado estos paquetes, ahora debemos descargar el código fuente de
-      la versión 3.7.4 de Python de la [página oficial de Python](https://www.python.org/downloads/release/python-374/) con el comando wget:
+      la versión 3.7.4 de la [página oficial de Python](https://www.python.org/downloads/release/python-374/) con el comando wget:
       
     ```bash
-        wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+        $ wget https://www.python.org/ftp/python/3.7.2/Python-3.7.4.tar.xz
+    ```
+    
+    - Al terminar descargaremos un archivo comprimido "Python-3.7.4.tar.xz". Descomprimimos este archivo con el siguiente comando:
+    ```bash
+        $ tar -xf Python-3.7.2.tar.xz
+    ```
+    
+    - Nos aparecerá la carpeta del archivo comprimido llamada "Python-3.7.4", entramos en ella y ejecutamos el siguiente comando para
+      configurar todo lo necesario y tener Python3.7.4 listo en su ordenador Linux.
+    ```bash
+        $ cd Python-3.7.4
+        $ ./configure --enable-optimizations
+    ```
+    
+    - A continuación, inicie el proceso de construcción usando el comando make -j 1. Reemplace el # 1 con la cantidad de núcleos de CPU en su sistema para un tiempo de construcción más rápido. Para saber cuántos nucleos tiene su CPU consulte el comando "cproc".
+    ```bash
+        $ make -j 1
+    ```
+    
+    - Ahora ejecute el siguiente comando para que haga todos los cambios de la instalación sin sobreescribir otras versiones de Python que tenga instalado.
+    ```bash
+        $ make altinstall
     ```
