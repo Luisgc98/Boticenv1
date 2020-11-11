@@ -59,12 +59,12 @@
       la versión 3.7.4 de la [página oficial de Python](https://www.python.org/downloads/release/python-374/) con el comando wget:
       
     ```bash
-        $ wget https://www.python.org/ftp/python/3.7.2/Python-3.7.4.tar.xz
+        $ wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
     ```
     
     - Al terminar descargaremos un archivo comprimido "Python-3.7.4.tar.xz". Descomprimimos este archivo con el siguiente comando:
     ```bash
-        $ tar -xf Python-3.7.2.tar.xz
+        $ tar -xf Python-3.7.4.tar.xz
     ```
     
     - Nos aparecerá la carpeta del archivo comprimido llamada "Python-3.7.4", entramos en ella y ejecutamos el siguiente comando para
@@ -82,4 +82,11 @@
     - Ahora ejecute el siguiente comando para que haga todos los cambios de la instalación sin sobreescribir otras versiones de Python que tenga instalado.
     ```bash
         $ make altinstall
+    ```
+    
+    - Para verificarlo, abra su terminal y escriba el siguiente comando:
+    
+    ```bash
+        $ python3.7 --version
+        $ Python 3.7.4
     ```
