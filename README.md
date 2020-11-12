@@ -167,3 +167,13 @@
     ```bash
         $ source tu_ambiente_virtual/bin/activate
     ```
+    - Al activarlo nos marcará entre parentesis el nombre de nuestro ambiente virtual:
+    ```bash
+        (tu_ambiente_virtual) $ 
+    ```
+    
+    - Una vez activado nuestro ambiente, proseguimos con la instalación de los requerimientos de la aplicación, aquí usaremos 
+      el siguiente comando de pip, y el archivo requirements.txt que se encuentra en el directorio de app:
+    ```bash
+        (tu_ambiente_virtual) $ python3.7 -m pip install -r app/requirements.txt
+    ```
