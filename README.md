@@ -13,8 +13,8 @@
 ### - Tener instalado Python en su versión 3.7.4
   - Instalación en Windows:
   
-    - Para instalar Python en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) donde
-      descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
+    - Para realizar la instalación en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) 
+      donde descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
     
     ![imagen windows1](https://miro.medium.com/max/2732/1*b5SZWxlBXkkhmAXjZgUWWg.png)
     
