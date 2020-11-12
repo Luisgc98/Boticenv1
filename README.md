@@ -192,3 +192,18 @@
     ```bash
         (tu_ambiente_virtual) $ flask run
     ```
+    
+    - Este comando nos devolverá el siguiente resultado, que nos indica que el servidor de nuestra aplicación ya se desplegó, y también nos devuelve la URL donde se encuentra alojada nuestra aplicación:
+    ```bash
+         * Serving Flask app "botic-app.py" (lazy loading)
+         * Environment: production
+           WARNING: This is a development server. Do not use it in a production deployment.
+           Use a production WSGI server instead.
+         * Debug mode: on
+         * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+         * Restarting with stat
+         * Debugger is active!
+         * Debugger PIN: 464-007-621
+    ```
+    
+    - 
