@@ -40,7 +40,7 @@
     ```cmd
         >python -V
     ```
-    - Resultado:
+      - Resultado:
     ```cmd
         Python 3.7.4
     ```
@@ -86,12 +86,49 @@
     ```
     
     - Ya tendrá python3.7 disponible desde cualquier directorio. Para verificarlo escriba el siguiente comando:
-    
     ```bash
         $ python3.7 --version
     ```
-    - Resultado: 
-    
+      - Resultado:
     ```bash
         $ Python 3.7.4
     ```
+
+### - Tener una cuenta en GitHub y tener Git instalado en nuestra terminal.
+  - Registro en GitHub
+    - Para registrarnos vamos [a la página de GitHub](https://github.com) donde sólo llenamos el formulario de 
+      registro.
+      ![github_registro](https://cdn.kastatic.org/ka-perseus-images/b96521d07ec01801331b4eec8d399c84f2131050.png)
+     
+    -Y listo! ya tendremos nuestro usuario de GitHub.
+    
+    
+  - Instalación Git en Windows
+    - Aquí va la instalación de Git en Windows, y te toca a ti. :v xdxd
+    
+    
+  - Instalación Git en Linux
+    - Para realizar la instalación en nuestro ordenador con Linux, haremos uso de nuestra línea de comandos. 
+      Escribimos el siguiente comando para instalar git:
+      ```bash
+        $ sudo apt-get install git
+      ```
+    - Y listo! Ya tendremos git instalado en nuestro ordenador, para verificarlo escriba el comando $ git --version.
+      Sólo hace falta realizar la configuración inicial.
+    
+    - Para realizar esta configuración haremos uso de el Nombre de Usuario y Correo de nuestra cuenta de GitHub.
+      Escriba los siguientes comandos reemplazando los datos de "name" & "email" por sus datos correspondientes.
+      ```bash
+        $ git config --global user.name "tu_nombre_de_usuario"
+        $ git config --global user.email "tu_correo@example.com"
+      ```
+    - Con esto ya tendremos git configurado y listo para usarlo posteriormente. Para ver los datos de su cuenta de git 
+      puede usar el siguiente comando:
+      ```bash
+        $ git config --global -l"
+      ```
+      - Resultado
+      ```bash
+        user.name=tu_nombre_de_usuario
+        user.email=tu_correo@example.com
+      ```
