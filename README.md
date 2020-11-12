@@ -47,7 +47,7 @@
     
   - Instalación en Linux
   
-    - Antes de instalar Python en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
+    - Antes de realizar la instalación en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
       Python desde la fuente. Sólo copie los siguientes comandos:
       
     ```bash
