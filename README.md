@@ -1,14 +1,14 @@
 # 🤖 Botic
 ### ¿Qué es Botic?
 ```
-  Botic es una aplicación donde podemos hacer la calendarización de un Bot para realizar procesos 
-  automatizados. Estos bots están programados en Automagica y para usar este aplicativo
-  se necesitan tener ciertos prerequisitos de instalación.
+  Botic es una aplicación donde podemos hacer la calendarización de un Bot para realizar 
+  procesos automatizados. Estos bots están programados en Automagica y para usar 
+  este aplicativo se necesitan tener ciertos prerequisitos instalados.
 ```
-### Prerequisitos
+#### Prerequisitos
 ```
-  Para nosotros tener la aplicación de Botic instalada de manera local y corriendo de manera adecuada, 
-  primero necesitamos tener instalados ciertos prerequisitos:
+  Para tener la aplicación de Botic instalada de manera local y corriendo de manera adecuada en nuestro
+  ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
 ### - Tener instalado Python en su versión 3.7.4
   - Instalación en Windows:
@@ -67,8 +67,9 @@
         $ tar -xf Python-3.7.4.tar.xz
     ```
     
-    - Nos aparecerá la carpeta del archivo comprimido llamada "Python-3.7.4", entramos en ella y ejecutamos el siguiente comando para
-      configurar todo lo necesario y tener Python3.7.4 en su ordenador Linux.
+    - Nos aparecerá la carpeta del archivo comprimido llamada "Python-3.7.4", entramos a ella, ejecutamos el siguiente comando para
+      configurar todo lo necesario, y listo! Ya tenemos Python3.7.4 disponible en su ordenador Linux, sólo falta realizar
+      el proceso de construcción en el sistema y guardar los cambios para poder utilizarlo de manera global.
     ```bash
         $ cd Python-3.7.4
         $ ./configure --enable-optimizations
@@ -84,9 +85,13 @@
         $ make altinstall
     ```
     
-    - Para verificarlo, abra su terminal y escriba el siguiente comando:
+    - Ya tendrá python3.7 disponible desde cualquier directorio. Para verificarlo escriba el siguiente comando:
     
     ```bash
         $ python3.7 --version
+    ```
+    - Resultado: 
+    
+    ```bash
         $ Python 3.7.4
     ```
