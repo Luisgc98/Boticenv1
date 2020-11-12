@@ -136,7 +136,7 @@
   - Para este paso debemos tener [acceso](https://git2-condor.ddns.net/users/sign_in) departe del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
 
 
-##### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
+###### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
 
 
 ### Instalación de Botic de manera local.
