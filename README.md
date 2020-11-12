@@ -10,8 +10,8 @@
   Para nosotros tener la aplicación de Botic instalada de manera local y corriendo de manera adecuada, 
   primero necesitamos tener instalados ciertos prerequisitos:
 ```
-- Tener instalado Python en su versión 3.7.4
-  ### - Instalación en Windows:
+### - Tener instalado Python en su versión 3.7.4
+  - Instalación en Windows:
   
     - Para instalar Python en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) donde
       descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
@@ -45,7 +45,7 @@
         Python 3.7.4
     ```
     
-  ### - Instalación en Linux
+  - Instalación en Linux
   
     - Antes de instalar Python en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
       Python desde la fuente. Sólo copie los siguientes comandos:
