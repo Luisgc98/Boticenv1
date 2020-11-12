@@ -179,4 +179,16 @@
         (tu_ambiente_virtual) $ python3.7 -m pip install -r app/requirements.txt
     ```
     
-    - Terminando la instalación de los requerimientos, proseguimos a la migración de la base de datos:
+    - Terminando la instalación de los requerimientos, proseguimos a la actualización de la base de datos usando el siguiente comando:
+    ```bash
+        (tu_ambiente_virtual) $ flask db upgrade
+    ```
+    - Nos devolverá el siguiente resultado, que nos indica que se hizo la actualización de manera correcta:
+    ```bash
+        INFO [alembic.runtime.migration] Context impl SQLiteImpl.
+        INFO [alembic.runtime.migration] Will assume non-transactional DDL.
+    ```
+    - Ahora proseguimos a levantar nuestra aplicación de Botic con el siguiente comando:
+    ```bash
+        (tu_ambiente_virtual) $ flask run
+    ```
