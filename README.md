@@ -100,7 +100,7 @@
       registro.
       ![github_registro](https://cdn.kastatic.org/ka-perseus-images/b96521d07ec01801331b4eec8d399c84f2131050.png)
      
-    - Y listo! ya tendremos nuestro usuario de GitHub.
+    - Confirmamos nuestro correo, y listo! ya tendremos nuestro usuario de GitHub.
     
     
   - Instalación Git en Windows
