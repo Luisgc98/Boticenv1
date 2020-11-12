@@ -104,7 +104,8 @@
     
     
   - Instalación Git en Windows
-    - Aquí va la instalación de Git en Windows, y te toca a ti. :v xdxd
+    - Para instalar Git en nuestro ordenador con  Windows,  ingresar a la liga  https://gitforwindows.org y hacer clic en download,  seguir el proceso de instalación. (en la instalación dar a todo siguiente como viene por defecto).
+    ![install_windows](https://scontent.fmex25-1.fna.fbcdn.net/v/t1.15752-9/124402478_3738900932841178_1399512574307556546_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_eui2=AeEImJmYB8cwzYpNqWt-iTw86i94bWmP96nqL3htaY_3qXiRg9ZopWK3KgNkcmQ4C9IDztROUub42GdDNk6XMChR&_nc_ohc=u2mXMp1gmZkAX8XKg0w&_nc_ht=scontent.fmex25-1.fna&oh=2de555a0ea553b47e5a64b14f7f37f74&oe=5FD15A5B)
     
     
   - Instalación Git en Linux
