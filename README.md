@@ -40,7 +40,7 @@
     ```cmd
         >python -V
     ```
-      - Resultado:
+    - Resultado:
     ```cmd
         Python 3.7.4
     ```
@@ -89,7 +89,7 @@
     ```bash
         $ python3.7 --version
     ```
-      - Resultado:
+    - Resultado:
     ```bash
         $ Python 3.7.4
     ```
@@ -100,7 +100,7 @@
       registro.
       ![github_registro](https://cdn.kastatic.org/ka-perseus-images/b96521d07ec01801331b4eec8d399c84f2131050.png)
      
-    -Y listo! ya tendremos nuestro usuario de GitHub.
+    - Y listo! ya tendremos nuestro usuario de GitHub.
     
     
   - Instalación Git en Windows
@@ -127,7 +127,7 @@
       ```bash
         $ git config --global -l"
       ```
-      - Resultado
+    - Resultado
       ```bash
         user.name=tu_nombre_de_usuario
         user.email=tu_correo@example.com
