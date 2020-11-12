@@ -94,7 +94,7 @@
         $ Python 3.7.4
     ```
 
-### - Tener una cuenta en GitHub y tener Git instalado en nuestra terminal.
+### - Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
   - Registro en GitHub
     - Para registrarnos vamos [a la página de GitHub](https://github.com) donde sólo llenamos el formulario de 
       registro.
