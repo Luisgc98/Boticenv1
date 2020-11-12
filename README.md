@@ -1,16 +1,16 @@
 # 🤖 Botic
-### ¿Qué es Botic?
+## ¿Qué es Botic?
 ```
   Botic es una aplicación donde podemos hacer la calendarización de un Bot para realizar 
   procesos automatizados. Estos bots están programados en Automagica y para usar 
   este aplicativo se necesitan tener ciertos prerequisitos instalados.
 ```
-#### Prerequisitos
+### Prerequisitos
 ```
   Para tener la aplicación de Botic instalada de manera local y corriendo de manera 
   adecuada en nuestro ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
-### - Tener instalado Python en su versión 3.7.4
+#### - Tener instalado Python en su versión 3.7.4
   - Instalación en Windows:
   
     - Para realizar la instalación en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) 
@@ -94,7 +94,7 @@
         $ Python 3.7.4
     ```
 
-### - Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
+#### - Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
   - Registro en GitHub
     - Para registrarnos vamos [a la página de GitHub](https://github.com) donde sólo llenamos el formulario de 
       registro.
