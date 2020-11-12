@@ -132,3 +132,8 @@
         user.name=tu_nombre_de_usuario
         user.email=tu_correo@example.com
       ```
+###### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
+
+
+### Instalación de Botic de manera local.
+  - Descarga del repositorio
