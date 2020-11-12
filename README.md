@@ -134,7 +134,7 @@
         user.email=tu_correo@example.com
       ```
 #### - Tener una cuenta en GitLab-git2-condor.
-  - Para este paso debemos tener [acceso](https://git2-condor.ddns.net/users/sign_in) departe del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
+  - Para este paso debemos tener [acceso](https://git2-condor.ddns.net/users/sign_in) de parte del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
 
 
 ###### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
