@@ -116,7 +116,7 @@
     - Y listo! Ya tendremos git instalado en nuestro ordenador, para verificarlo escriba el comando $ git --version.
       Sólo hace falta realizar la configuración inicial.
     
-    - Para realizar esta configuración haremos uso de el Nombre de Usuario y Correo de nuestra cuenta de GitHub.
+    - Para esta configuración haremos uso del Nombre de Usuario y Correo de nuestra cuenta de GitHub.
       Escriba los siguientes comandos reemplazando los datos de "name" & "email" por sus datos correspondientes.
       ```bash
         $ git config --global user.name "tu_nombre_de_usuario"
