@@ -147,3 +147,23 @@
     ```bash
         $ git clone -b autov3 https://git2-condor.ddns.net/botic/botic-app.git
     ```
+    
+    - Se descargará un directorio llamado botic-app, donde se encontrará alojado toda la configiración de la aplicación de Botic.
+      Es en este directorio en donde vamos a estar trabajando.
+      
+  - Crear el ambiente virtual en botic-app
+    
+    - Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
+      siguiente paso.
+    
+    - Para crear ambientes virtuales con Python 3.7.4, usamos el siguiente comando, reemplazando "tu_ambiente_virtual" por el nombre
+      que le quieras poner a tu ambiente virtual:
+    ```bash
+        $ python3.7 -m venv tu_ambiente_virtual
+    ```
+    
+    - Terminando el proceso, nos aparecerá una carpeta con el nombre que le hayamos puesto a nuestro ambiente virtual.
+      Para activarlo usamos el siguiente comando:
+    ```bash
+        $ source tu_ambiente_virtual/bin/activate
+    ```
