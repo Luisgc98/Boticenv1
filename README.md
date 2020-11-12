@@ -132,8 +132,18 @@
         user.name=tu_nombre_de_usuario
         user.email=tu_correo@example.com
       ```
+#### - Tener una cuenta en GitLab-git2-condor.
+  - Para este paso debemos tener acceso departe del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
+
+
 ###### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
 
 
 ### Instalación de Botic de manera local.
-  - Descarga del repositorio
+  - Descarga del repositorio botic-app
+  
+    - Para descargar este repositorio haremos uso de los comandos de git, en caso de Windows usa la línea de comandos de git.
+      Descargaremos este repositorio de la rama autov3:
+    ```bash
+        $ git clone -b autov3 https://git2-condor.ddns.net/botic/botic-app.git
+    ```
