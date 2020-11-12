@@ -33,7 +33,7 @@
     ![imagen windows3](https://i.ytimg.com/vi/Wx8XU2L2k6Q/maxresdefault.jpg)
     
     - Una vez acabando la instalación presionamos en el botón de "Close", y listo! Ya tendremos Python en su
-      versión 3.7.4 instalado en su ordenador.
+      versión 3.7.4 instalado en nuestro ordenador.
       
     - Para verificarlo, abra su CMD y escriba el siguiente comando:
     
