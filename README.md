@@ -178,3 +178,5 @@
     ```bash
         (tu_ambiente_virtual) $ python3.7 -m pip install -r app/requirements.txt
     ```
+    
+    - Terminando la instalación de los requerimientos, proseguimos a la migración de la base de datos:
