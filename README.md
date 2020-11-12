@@ -7,8 +7,8 @@
 ```
 #### Prerequisitos
 ```
-  Para tener la aplicación de Botic instalada de manera local y corriendo de manera adecuada en nuestro
-  ordenador, primero necesitamos tener instalados ciertos prerequisitos:
+  Para tener la aplicación de Botic instalada de manera local y corriendo de manera 
+  adecuada en nuestro ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
 ### - Tener instalado Python en su versión 3.7.4
   - Instalación en Windows:
