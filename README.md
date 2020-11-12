@@ -125,7 +125,7 @@
     - Con esto ya tendremos git configurado y listo para usarlo posteriormente. Para ver los datos de su cuenta de git 
       puede usar el siguiente comando:
       ```bash
-        $ git config --global -l"
+        $ git config --global -l
       ```
     - Resultado
       ```bash
@@ -133,10 +133,10 @@
         user.email=tu_correo@example.com
       ```
 #### - Tener una cuenta en GitLab-git2-condor.
-  - Para este paso debemos tener acceso departe del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
+  - Para este paso debemos tener [acceso](https://git2-condor.ddns.net/users/sign_in) departe del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
 
 
-###### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
+##### Si ha llegado hasta este punto, ya está listo para instalar Botic en su ordenador, sigas las siguientes instrucciones.
 
 
 ### Instalación de Botic de manera local.
