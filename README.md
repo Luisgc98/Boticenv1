@@ -152,7 +152,7 @@
     - Se descargará un directorio llamado botic-app, donde se encontrará alojado toda la configiración de la aplicación de Botic.
       Es en este directorio en donde vamos a estar trabajando.
       
-  - Crear el ambiente virtual en botic-app
+  - Crear el ambiente virtual en botic-app e instalación del app.
     
     - Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
       siguiente paso.
@@ -174,7 +174,7 @@
     ```
     
     - Una vez activado nuestro ambiente, proseguimos con la instalación de los requerimientos de la aplicación, aquí usaremos 
-      el siguiente comando de pip, y el archivo requirements.txt que se encuentra en el directorio de app:
+      el siguiente comando de pip, y el archivo requirements.txt que se encuentra en el directorio app:
     ```bash
         (tu_ambiente_virtual) $ python3.7 -m pip install -r app/requirements.txt
     ```
@@ -206,8 +206,6 @@
          * Debugger PIN: 464-007-621
     ```
     
-    - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos instalado Botic en nuestro ordenador de manera local.
+    - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos desplegado Botic en nuestro ordenador de manera local.
     
     ![botic_login](https://lh3.googleusercontent.com/-yR_kOgYz4nM/X63GCRVWOvI/AAAAAAAAFVM/vEXDMn0OVIcaGjHZbZL-usHJ7RgjRPmOgCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-12%2B17-29-07.png)
-    
-    - 
