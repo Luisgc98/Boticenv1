@@ -206,4 +206,8 @@
          * Debugger PIN: 464-007-621
     ```
     
+    - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos instalado Botic en nuestro ordenador de manera local.
+    
+    ![botic_login](https://lh3.googleusercontent.com/-yR_kOgYz4nM/X63GCRVWOvI/AAAAAAAAFVM/vEXDMn0OVIcaGjHZbZL-usHJ7RgjRPmOgCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-12%2B17-29-07.png)
+    
     - 
