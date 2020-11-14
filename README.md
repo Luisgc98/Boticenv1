@@ -209,3 +209,15 @@
     - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos desplegado Botic en nuestro ordenador de manera local.
     
     ![botic_login](https://lh3.googleusercontent.com/-yR_kOgYz4nM/X63GCRVWOvI/AAAAAAAAFVM/vEXDMn0OVIcaGjHZbZL-usHJ7RgjRPmOgCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-12%2B17-29-07.png)
+    
+  - Despliegue de los servicios Rest
+    
+    - Para desplegar los servicios Rest de nuestra aplicación, nos posicionamos en la la carpeta de botic-app, activamos nuestro ambiente virtual, y ya no es necesario hacer los pasos anteriores, sólo hay que declarar nuestra variable de entorno FLASK_APP con la variable botic-api y desplegar nuestra aplicación en el puerto 5002, de la siguiente manera:
+    ```bash
+         (tu_ambiente_virtual) $ export FLASK_APP=botic-api
+         (tu_ambiente_virtual) $ flask run --port=5002
+    ```
+    
+    - Esto nos devolverá una URL similar a la URL donde se aloja nuestra aplicación, cambiando el numero del puerto por el 5002: http://127.0.0.1:5002/
+    
+    - Copiamos esta URL agregándole al final la palabra "api" (http://127.0.0.1:5002/api) y pegamos en nuestro navegador. Esto nos deplegará una página con todos los servicios Rest de nuestra aplicación:
