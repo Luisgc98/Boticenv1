@@ -11,7 +11,7 @@
   adecuada en nuestro ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
 #### - Tener instalado Python en su versión 3.7.4
-  - Instalación en Windows:
+  - <h3>Instalación en Windows: </h3>
   
     - Para realizar la instalación en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) 
       donde descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
