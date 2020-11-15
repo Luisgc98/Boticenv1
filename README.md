@@ -11,7 +11,7 @@
   adecuada en nuestro ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
 #### - Tener instalado Python en su versión 3.7.4
-  - <h3>Instalación en Windows: </h3>
+  - <h4>Instalación en Windows: </h4>
   
     - Para realizar la instalación en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) 
       donde descargaremos el archivo de Python 3.7.4 correspondiente a las especificaciones para su ordenador.
@@ -45,7 +45,7 @@
         Python 3.7.4
     ```
     
-  - Instalación en Linux
+  - <h4>Instalación en Linux</h4>
   
     - Antes de realizar la instalación en su ordenador, debemos instalar algunos paquetes necesarios para ejecutar
       Python desde la fuente. Sólo copie los siguientes comandos:
@@ -95,7 +95,7 @@
     ```
 
 #### - Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
-  - Registro en GitHub
+  - <h4>Registro en GitHub</h4>
     - Para registrarnos vamos [a la página de GitHub](https://github.com) donde sólo llenamos el formulario de 
       registro.
       ![github_registro](https://cdn.kastatic.org/ka-perseus-images/b96521d07ec01801331b4eec8d399c84f2131050.png)
@@ -103,12 +103,12 @@
     - Confirmamos nuestro correo, y listo! ya tendremos nuestro usuario de GitHub.
     
     
-  - Instalación Git en Windows
+  - <h4>Instalación Git en Windows</h4>
     - Para instalar Git en nuestro ordenador con  Windows,  ingresar a la liga  https://gitforwindows.org y hacer clic en download,  seguir el proceso de instalación. (en la instalación dar a todo siguiente como viene por defecto).
     ![install_windows](https://scontent.fmex25-1.fna.fbcdn.net/v/t1.15752-9/124402478_3738900932841178_1399512574307556546_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_eui2=AeEImJmYB8cwzYpNqWt-iTw86i94bWmP96nqL3htaY_3qXiRg9ZopWK3KgNkcmQ4C9IDztROUub42GdDNk6XMChR&_nc_ohc=u2mXMp1gmZkAX8XKg0w&_nc_ht=scontent.fmex25-1.fna&oh=2de555a0ea553b47e5a64b14f7f37f74&oe=5FD15A5B)
     
     
-  - Instalación Git en Linux
+  - <h4>Instalación Git en Linux</h4>
     - Para realizar la instalación en nuestro ordenador con Linux, haremos uso de nuestra línea de comandos. 
       Escribimos el siguiente comando para instalar git:
       ```bash
@@ -141,7 +141,7 @@
 
 
 ### Instalación de Botic de manera local.
-  - Descarga del repositorio botic-app
+  - <h4>Descarga del repositorio botic-app</h4>
   
     - Para descargar este repositorio haremos uso de los comandos de git, en caso de Windows usa la línea de comandos de git.
       Descargaremos este repositorio de la rama autov3:
@@ -152,7 +152,7 @@
     - Se descargará un directorio llamado botic-app, donde se encontrará alojado toda la configuración de la aplicación de Botic.
       Es en este directorio en donde vamos a estar trabajando.
       
-  - Crear el ambiente virtual en botic-app e instalación de la app.
+  - <h4>Crear el ambiente virtual en botic-app e instalación de la app.</h4>
     
     - Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
       siguiente paso.
@@ -213,7 +213,7 @@
     - Si deseamos volver a levantar el servidor, ya no es necesario hacer todos los pasos anteriores, basta activar nuestro ambiente virtual y con correr nuestra aplicación con "flask run".
     
     
-  - Despliegue de los servicios Rest
+  - <h4>Despliegue de los servicios Rest</h4>
     
     - Para desplegar los servicios Rest de nuestra aplicación, nos posicionamos en la la carpeta de botic-app, activamos nuestro ambiente virtual, y ya no es necesario hacer los pasos anteriores, sólo hay que declarar nuestra variable de entorno FLASK_APP con la variable botic-api y desplegar nuestra aplicación en el puerto 5002, de la siguiente manera:
     ```bash
