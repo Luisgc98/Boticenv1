@@ -10,7 +10,7 @@
   Para tener la aplicación de Botic instalada de manera local y corriendo de manera 
   adecuada en nuestro ordenador, primero necesitamos tener instalados ciertos prerequisitos:
 ```
-#### - 1.Tener instalado Python en su versión 3.7.4
+#### 1.- Tener instalado Python en su versión 3.7.4
   - <h4>Instalación en Windows: </h4>
   
     - Para realizar la instalación en su ordenador con Windows, nos dirigimos a la [página oficial de Python](https://www.python.org/downloads/release/python-374/) 
@@ -94,7 +94,7 @@
         $ Python 3.7.4
     ```
 
-#### - 2.Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
+#### 2.- Tener una cuenta en GitHub y tener Git instalado en nuestro ordenador.
   - <h4>Registro en GitHub</h4>
   
     - Para registrarnos vamos [a la página de GitHub](https://github.com) donde sólo llenamos el formulario de 
@@ -135,7 +135,7 @@
         user.name=tu_nombre_de_usuario
         user.email=tu_correo@example.com
       ```
-#### - 3.Tener una cuenta en GitLab-git2-condor.
+#### 3.- Tener una cuenta en GitLab-git2-condor.
   - Para este paso debemos tener [acceso](https://git2-condor.ddns.net/users/sign_in) de parte del equipo de Condor, de no ser así ponserse en contacto con Condor Consulting.
 
 
