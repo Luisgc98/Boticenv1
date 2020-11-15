@@ -206,9 +206,12 @@
          * Debugger PIN: 464-007-621
     ```
     
-    - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos desplegado Botic en nuestro ordenador de manera local.
+    - Copiamos la URL que nos devuelve, la pegamos en nuestro navegador. Y listo! Ya tendremos desplegado Botic en nuestro ordenador de manera local. Para parar el sevidor presionamos Ctrl+C.
     
     ![botic_login](https://lh3.googleusercontent.com/-yR_kOgYz4nM/X63GCRVWOvI/AAAAAAAAFVM/vEXDMn0OVIcaGjHZbZL-usHJ7RgjRPmOgCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-12%2B17-29-07.png)
+    
+    - Si deseamos volver a levantar el servidor, ya no es necesario hacer todos los pasos anteriores, basta con correr nuestra aplicación con "flask run".
+    
     
   - Despliegue de los servicios Rest
     
@@ -220,4 +223,9 @@
     
     - Esto nos devolverá una URL similar a la URL donde se aloja nuestra aplicación, cambiando el numero del puerto por el 5002: http://127.0.0.1:5002/
     
-    - Copiamos esta URL agregándole al final la palabra "api" (http://127.0.0.1:5002/api) y pegamos en nuestro navegador. Esto nos deplegará una página con todos los servicios Rest de nuestra aplicación:
+    - Si copiamos esta URL agregándole al final la palabra "api" (http://127.0.0.1:5002/api) y pegamos en nuestro navegador, esto nos deplegará una página con todos los servicios Rest de nuestra aplicación, lo que nos indicará que se desplegaron de manera correcta:
+
+    ![]()
+
+
+  ###### Si ha llegado hasta este punto, ¡Felicidades! Ya tiene instalado Botic en su ordenador. Para poder desplegar nuevamente el servidor de nuestra aplicación, tenemos que abrir dos terminales, es una correr nuestra aplicación con "flask run", y en otra desplegar nuestros servicios Rest igual que el paso anterior.
