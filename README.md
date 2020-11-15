@@ -228,4 +228,4 @@
     ![]()
 
 
-  ###### Si ha llegado hasta este punto, ¡Felicidades! Ya tiene instalado Botic en su ordenador. Para poder desplegar nuevamente el servidor de nuestra aplicación, tenemos que abrir dos terminales, es una correr nuestra aplicación con "flask run", y en otra desplegar nuestros servicios Rest igual que el paso anterior.
+###### Si ha llegado hasta este punto, ¡Felicidades! Ya tiene instalado Botic en su ordenador. Para poder desplegar nuevamente el servidor de nuestra aplicación, tenemos que abrir dos terminales, es una correr nuestra aplicación con "flask run", y en otra desplegar nuestros servicios Rest igual que el paso anterior.
