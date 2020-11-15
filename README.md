@@ -1,9 +1,9 @@
 # 🤖 Botic
 ## ¿Qué es Botic?
 ```
-  Botic es una aplicación donde podemos hacer la calendarización de un Bot para realizar 
-  procesos automatizados. Estos bots están programados en Automagica y para usar 
-  este aplicativo se necesitan tener ciertos prerequisitos instalados.
+  Botic es una aplicación donde podemos hacer la calendarización de un Bot para que 
+  realice procesos automatizados. Estos bots están programados en Automagica y para 
+  usar este aplicativo se necesitan tener ciertos prerequisitos instalados.
 ```
 ### Prerequisitos
 ```
@@ -149,16 +149,16 @@
         $ git clone -b autov3 https://git2-condor.ddns.net/botic/botic-app.git
     ```
     
-    - Se descargará un directorio llamado botic-app, donde se encontrará alojado toda la configiración de la aplicación de Botic.
+    - Se descargará un directorio llamado botic-app, donde se encontrará alojado toda la configuración de la aplicación de Botic.
       Es en este directorio en donde vamos a estar trabajando.
       
-  - Crear el ambiente virtual en botic-app e instalación del app.
+  - Crear el ambiente virtual en botic-app e instalación de la app.
     
     - Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
       siguiente paso.
     
     - Para crear ambientes virtuales con Python 3.7.4, usamos el siguiente comando, reemplazando "tu_ambiente_virtual" por el nombre
-      que le quieras poner a tu ambiente virtual:
+      que le quieras poner a tu ambiente:
     ```bash
         $ python3.7 -m venv tu_ambiente_virtual
     ```
@@ -168,7 +168,7 @@
     ```bash
         $ source tu_ambiente_virtual/bin/activate
     ```
-    - Al activarlo nos marcará entre parentesis el nombre de nuestro ambiente virtual:
+    - Al activarlo nos marcará entre parentesis el nombre de nuestro ambiente:
     ```bash
         (tu_ambiente_virtual) $ 
     ```
@@ -210,7 +210,7 @@
     
     ![botic_login](https://lh3.googleusercontent.com/-yR_kOgYz4nM/X63GCRVWOvI/AAAAAAAAFVM/vEXDMn0OVIcaGjHZbZL-usHJ7RgjRPmOgCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-12%2B17-29-07.png)
     
-    - Si deseamos volver a levantar el servidor, ya no es necesario hacer todos los pasos anteriores, basta con correr nuestra aplicación con "flask run".
+    - Si deseamos volver a levantar el servidor, ya no es necesario hacer todos los pasos anteriores, basta activar nuestro ambiente virtual y con correr nuestra aplicación con "flask run".
     
     
   - Despliegue de los servicios Rest
