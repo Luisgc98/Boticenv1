@@ -156,13 +156,18 @@
       
   - <h4>Crear el ambiente virtual en botic-app e instalación de la app.</h4>
     
-    - Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
+    - Para crear estos ambientes haremos uso de nuestra línea de comandos, en caso de Windows usaremos PowerShell, y en Linux nuestra terminal de siempre. Antes de crear nuestro ambiente virtual nos tenemos que posicionar en la carpeta de botic-app, una vez ahí proseguimos con el
       siguiente paso.
     
     - Para crear ambientes virtuales con Python 3.7.4, usamos el siguiente comando, reemplazando "tu_ambiente_virtual" por el nombre
-      que le quieras poner a tu ambiente:
+      que le quieras poner a tu ambiente. En caso de der usuario Windows, basta con poner el comando único "python" sin el numero de la verisón:
     ```bash
+        $ # Linux
         $ python3.7 -m venv tu_ambiente_virtual
+    ```
+    ```cmd
+        > # Windows
+        > python -m venv tu_ambiente_virtual
     ```
     
     - Terminando el proceso, nos aparecerá una carpeta con el nombre que le hayamos puesto a nuestro ambiente virtual.
@@ -170,15 +175,26 @@
     ```bash
         $ source tu_ambiente_virtual/bin/activate
     ```
+    - En caso de ser usuario Windows, ingrese a la carpeta llamada Scripts y accione el comando "activate" de la siguiente manera:
+    ```cmd
+        > cd Scripts
+        > activate
+    ```
+    
     - Al activarlo nos marcará entre parentesis el nombre de nuestro ambiente:
     ```bash
         (tu_ambiente_virtual) $ 
     ```
     
     - Una vez activado nuestro ambiente, proseguimos con la instalación de los requerimientos de la aplicación, aquí usaremos 
-      el siguiente comando de pip, y el archivo requirements.txt que se encuentra en el directorio app:
+      el siguiente comando de pip, y el archivo requirements.txt que se encuentra en el directorio app. En caso de der usuario Windows, basta con poner el comando único "python" sin el numero de la verisón::
     ```bash
+        (tu_ambiente_virtual) $ # Linux
         (tu_ambiente_virtual) $ python3.7 -m pip install -r app/requirements.txt
+    ```
+    ```cmd
+        (tu_ambiente_virtual) > # Windows
+        (tu_ambiente_virtual) > python -m pip install -r app/requirements.txt
     ```
     
     - Terminando la instalación de los requerimientos, proseguimos a la actualización de la base de datos usando el siguiente comando:
@@ -222,12 +238,17 @@
          (tu_ambiente_virtual) $ export FLASK_APP=botic-api
          (tu_ambiente_virtual) $ flask run --port=5002
     ```
+    - En caso de ser usuario Windows, es de la siguiente manera: 
+    ```cmd
+         (tu_ambiente_virtual) > set FLASK_APP=botic-api
+         (tu_ambiente_virtual) > flask run --port=5002
+    ```
     
     - Esto nos devolverá una URL similar a la URL donde se aloja nuestra aplicación, cambiando el numero del puerto por el 5002: http://127.0.0.1:5002/
     
     - Si copiamos esta URL agregándole al final la palabra "api" (http://127.0.0.1:5002/api) y pegamos en nuestro navegador, esto nos deplegará una página con todos los servicios Rest de nuestra aplicación, lo que nos indicará que se desplegaron de manera correcta:
 
-    ![]()
+    ![api_services](https://lh3.googleusercontent.com/-x-uT9I1ibuE/X7LlC7U0MRI/AAAAAAAAFZI/SJBnJ8iQgLgplSDzvhEwCESA6v5a7kHLwCK8BGAsYHg/s0/Captura%2Bde%2Bpantalla%2Bde%2B2020-11-16%2B14-45-18.png)
 
 
 ###### Si ha llegado hasta este punto, ¡Felicidades! Ya tiene instalado Botic en su ordenador. Para poder desplegar nuevamente el servidor de nuestra aplicación, tendremos que abrir dos terminales, en una correr nuestra aplicación con "flask run", y en otra desplegar nuestros servicios Rest igual que el paso anterior. Ahora puede continuar con la [guía de instalación de Botic Cliente](https://github.com/Luisgc98/Autoenv1).
