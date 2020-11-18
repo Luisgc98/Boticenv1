@@ -175,10 +175,9 @@
     ```bash
         $ source tu_ambiente_virtual/bin/activate
     ```
-    - En caso de ser usuario Windows, ingrese a la carpeta llamada Scripts y accione el comando "activate" de la siguiente manera:
+    - En caso de ser usuario Windows con el siguiente comando:
     ```cmd
-        > cd Scripts
-        > activate
+           nombre_de_ambiente\Scripts\activate
     ```
     
     - Al activarlo nos marcará entre parentesis el nombre de nuestro ambiente:
