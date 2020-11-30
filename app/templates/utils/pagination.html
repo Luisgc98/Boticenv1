@@ -1,0 +1,37 @@
+{% macro render_pagination(pagination, function, module) %}
+  <div class="pagination b__flex__row__centered__content"
+      id="{{module}}-pagination">
+    <div>
+      {% if pagination.has_prev %}
+        <a href="javascript:{{function}}({{pagination.page-1}});">
+          <strong>&lt;</strong>
+        </a>
+      {% endif %}
+    </div>
+  {%- for page in pagination.iter_pages() %}
+    {% if page %}
+      <div>
+        {% if page != pagination.page %}
+          <a href="javascript:{{function}}({{page}});"
+            id="pager_{{page}}">
+            <div class="b__pag__item">{{ page }}</div>
+          </a>
+        {% else %}
+          <div class="b__pag__item b__pag__current">
+            <strong id="{{module}}-current-page">{{ page }}</strong>
+          </div>
+        {% endif %}
+      </div>
+    {% else %}
+      <span class="ellipsis">…</span>
+    {% endif %}
+  {%- endfor %}
+    <div>
+      {% if pagination.has_next %}
+        <a href="javascript:{{function}}({{pagination.page+1}});">
+          <strong>&gt;</strong>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}

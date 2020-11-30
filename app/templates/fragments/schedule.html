@@ -1,0 +1,77 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+<div class="modal fade" id="schedule-dialog"
+        data-backdrop="static" data-keyboard="false" 
+        tabindex="-1" role="dialog" 
+        aria-labelledby="schedule-dialog-label" 
+        aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" name="frm-schedule">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="schedule-dialog-label"
+                        data-i18n-text="{{ _('Schedule the task ') }}">
+                        {{ _('Schedule the task ') }}
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{ g.schedule_form.hidden_tag() }}
+                <div class="modal-body">
+                    <div id="periodicity-container" class="b__flex__row__centered__content">
+                        {% for subfield in g.schedule_form.periodicity %}
+                            <div class="b__default__borders">
+                                {{ subfield.label }}
+                                {{ subfield }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="b__flex__row__centered__content">
+                        {% if 'MONTHLY' in g.schedule_form.periodicity.data
+                            or 'YEARLY' in g.schedule_form.periodicity.data %}
+                            <div id="on_day_cntr">
+                                {{ g.schedule_form.on_day.label}} {{ g.schedule_form.on_day }}
+                            </div>
+                        {% else %}
+                            <div id="on_day_cntr" class="hidden">
+                                {{ g.schedule_form.on_day.label}} {{ g.schedule_form.on_day }}
+                            </div>
+                        {% endif %}
+                        {% if 'YEARLY' in g.schedule_form.periodicity.data %}
+                            <div id="on_month_cntr">
+                                {{ g.schedule_form.on_month.label}} {{ g.schedule_form.on_month }}
+                            </div>
+                        {% else %}
+                            <div id="on_month_cntr" class='hidden'>
+                                {{ g.schedule_form.on_month.label}} {{ g.schedule_form.on_month }}
+                            </div>
+                        {% endif %}
+                        {% if 'DAY' in g.schedule_form.periodicity.data or
+                            'WEEK' in g.schedule_form.periodicity.data or
+                            'MONTHLY' in g.schedule_form.periodicity.data or
+                            'YEARLY' in g.schedule_form.periodicity.data %}
+                            <div id="at_hour_cntr">
+                                {{ g.schedule_form.at_hour.label }} {{ g.schedule_form.at_hour }}:
+                            </div>
+                        {% else %}
+                            <div id="at_hour_cntr" class="hidden">
+                                {{ g.schedule_form.at_hour.label }} {{ g.schedule_form.at_hour }}:
+                            </div>
+                        {% endif %}
+                        <div>
+                            {{ g.schedule_form.at_minutes }}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn b__secondary__button" 
+                            data-dismiss="modal">{{ _('Close') }}</button>
+                    {% set msg = _('Please select bot(s) to execute the task') %}
+                    {{ g.schedule_form.submit(class='btn btn-primary b__primary__button'
+                                                ,id='schedule-btn'
+                                                ,data_i18n_error_text=msg) }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

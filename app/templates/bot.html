@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}{{ _('Bot - %(bot_name)s', bot_name=bot.name) }}{% endblock %}
+{% block app_content %}
+    {% if bot %}
+    {% set tasks = bot.get_tasks(1) %}
+    {% endif %}
+    <div class="center-block">
+        <div class="b__flex__row">
+            <div class="b__w__250 b__secondary__bg">
+                <div class="b__flex__row b__bot__header">
+                    <span class="icon-reddit"></span><strong>{{ _('Bot') }}</strong>
+                </div>
+                <br>
+                <div class="b__flex__row">
+                    <input type="hidden" name="bot-id" id="bot-id" value="{{bot.id}}">
+                    <input type="hidden" name="bot-secret" id="bot-secret" value="{{bot.bot_secret}}">
+                    <h3>{{ bot.name }}</h3>
+                </div>
+                <div class="b__flex__row">
+                    <div>
+                        {% if bot.is_connected %}
+                        <span class="b__connected">{{ _('Connected') }}</span>
+                        {% else %}
+                        <span class="b__disconnected">{{ _('Disconnected') }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <br>
+                <div class="b__flex__row">
+                    <span class="b__counter">
+                        <h4>{% if bot %}{{ bot.total_of_tasks }}{% endif %}</h4>
+                    </span>
+                </div>
+                <div class="b__flex__row">
+                    <span class="b__counter__footer">{{ _('Assigned tasks') }}</span>
+                </div>
+                <br>
+                <div class="b__flex__row">
+                    <span class="b__counter">
+                        <h4>{% if bot %}{{ bot.total_of_scheduled }}{% endif %}</h4>
+                    </span>
+                </div>
+                <div class="b__flex__row">
+                    <span class="b__counter__footer">{{ _('Scheduled tasks')}}</span>
+                </div>
+                <br>
+                <br>
+                <div class="b__flex__row">
+                    <span id='delete_bot_{{bot.id}}' 
+                            class="icon-bin b__default__actions"
+                            data-toggle="modal"
+                            data-target="#confirm-delete-bot" 
+                            title="{{ _('Delete') }}">
+                        {{ _('Delete')}}
+                    </span>
+                </div>
+            </div>
+            <div class="b__w__800">
+                {% include 'fragments/tasks.html' %}
+            </div>
+        </div>
+        <div class="modal fade" id="confirm-delete-bot" 
+                tabindex="-1" role="dialog" 
+                aria-labelledby="conf-delete-bot-title" 
+                aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <label class="modal-title" id="conf-delete-bot-title">
+                            {{ _('Confirm delete of') }} {{ bot.name }} 
+                        </label>
+                        <button type="button" class="close" data-dismiss="modal" 
+                                aria-label="{{ _('Close') }}">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-form-label">
+                                {{ _('All related jobs are going to be deleted, this action is permanent') }}
+                            </label>
+                            <input type="hidden" name="taskId" id="taskId">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form method="POST">
+                            <button type="button" class="btn b__secondary__button" 
+                                data-dismiss="modal">{{ _('Close') }}</button>
+                            {{ del_form.bot_delete_btn(class="btn b__primary__button") }}
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% import 'utils/pagination.html' as pagination %}
+{% import 'utils/search.html' as search %}
+<div id="tasks_container" class="table-responsive">
+    <div class="b__flex__row__sb">
+        <div class="b__flex__row">
+            <div class="b__sub__titles">
+                <span class="icon-file-text2"></span> {{ _('Tasks') }}
+            </div>
+            <div class="b__centered">
+                <span class="icon-loop2 b__default__actions" id="btn-task-refresh" 
+                        title="{{ _('Refresh') }}">
+                </span>
+            </div>
+        </div>
+        <div class="b__flex__row">
+            <button type="button" class="btn b__secondary__button" 
+                    data-toggle="modal" 
+                    data-target="#tasks-dialog">
+                <span class="icon-upload"></span>
+                {{ _('Upload Task') }}
+            </button>
+        </div>
+        {{ search.render_search('tasks','handleTasksSearch(event)') }}
+    </div>
+    {% if tasks %}
+    <div id="task-container">
+        <div class="b__tasks__data">
+            {% for task in tasks.items %}
+            <div class="b__task__row b__flex__centered">
+                <div class="b__centered">
+                    <div id="div_task_sch_{{task.id}}" class="b__min__w__25px b__flex__row">
+                        <span class="icon-calendar b__default__actions" 
+                                id="schedule-task"
+                                title="{{ _('Schedule') }}"
+                                data-i18n-error="{{ _('Please select bot(s) to execute the task') }}"
+                                data-toggle="modal"
+                                data-target="#schedule-dialog"
+                                data-task-id="{{task.id}}"
+                                data-task-name="{{task.name}}">
+                            {% set total = task.total_of_scheduled %}
+                            <div class="b__schedules__counter {% if total <= 0 %}hidden{% endif %}">
+                                {{ total }}
+                            </div>
+                        </span>
+                    </div>
+                    <div class="b__min__w__25px b__flex__row">
+                        <span class="icon-play3 b__default__actions" 
+                                id="play-task" data-task-id="{{task.id}}"
+                                title="{{ _('Play') }}" 
+                                data-i18n-error="{{ _('Please select bot(s) to execute the task') }}">
+                        </span>
+                    </div>
+                    <div class="b__min__w__25px b__flex__row">
+                        <span class="icon-file-text2 b__default__actions" 
+                                id="task-details" 
+                                title="{{ _('Details') }}"
+                                data-toggle="modal"
+                                data-target="#task-details-dialog"
+                                data-task-id="{{task.id}}">
+                        </span>
+                    </div>
+                </div>
+                <div class="b__desc">
+                    <div>{{task.name}}</div>
+                </div>
+                <div>
+                    <div id="{{task.id}}" class="b__min__w__25px float-right">
+                        <span class="icon-bin b__second__actions"
+                                id="del-task"
+                                data-toggle="modal"
+                                data-target="#confirm-delete" 
+                                data-task-name="{{task.name}}"
+                                data-task-id="{{task.id}}"
+                                title="{{ _('Delete') }}"></span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>            
+            {{ pagination.render_pagination(tasks, 'handleTasksPagination', 'tasks') }}
+        </div>
+    {% endif %}
+    <div class="modal fade" id="confirm-delete" 
+            tabindex="-1" role="dialog" 
+            aria-labelledby="conf-delete-title" 
+            aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="conf-delete-title"
+                        data-i18n-text="{{ _('Confirm delete of') }}">
+                        {{ _('Confirm delete of') }} 
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" 
+                            aria-label="{{ _('Close') }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-form-label">
+                            {{ _('All related jobs are going to be deleted, this action is permanent') }}
+                        </label>
+                        <input type="hidden" name="taskId" id="taskId">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn b__secondary__button" 
+                            data-dismiss="modal">{{ _('Close') }}</button>
+                    <button type="button" class="btn b__primary__button" 
+                            data-dismiss="modal" id="delete-task"
+                            data-from-bot="{% if bot %}{{ bot.id }}{% endif %}">
+                        {{ _('Delete') }}
+                        <span class="icon-bin"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "fragments/task-upload-form.html" %}
+    {% include "fragments/task-details-dialog.html" %}
+    {% if g.schedule_form %}{% include "fragments/lagcschedule.html" %} {% endif %}
+</div>

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title%}{{ _('Profile') }}{% endblock%}
+{% block app_content %}
+<script>
+function copyUserSecret() {
+  /* Get the text field */
+  var copyText = document.getElementById("u-secret");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+} 
+</script>
+<div class="b__flex__row">
+    <div id="profile-section" class="b__w__250 b__secondary__bg b__main__container">
+        <div>
+            <span class="icon-user-tie"></span> {{ _('Profile') }}
+        </div>
+        <div>
+            <strong>{{user.first_name}} {{user.last_name}}</strong>
+        </div>
+        <div>
+            <strong>{{user.email}}</strong>
+        </div>
+        <div>
+            <h6>{{ _('User Secret') }}</h6>
+            <input type="text" value="{{user.user_secret}}" readonly id="u-secret"/>
+            <button onclick="copyUserSecret()" ><span class="glyphicon glyphicon-copy" ></span></button> 
+        </div>
+        
+    </div>
+    <div id="utilities-section" class="b__w__800">
+        <div>
+            <strong>{{_('Utilities')}}</strong>
+        </div>
+        <div class="b__flex__row__st">
+            <div class="b__util__card">
+                <strong>{{ _('Machine as bot') }}</strong>
+                <p>{{ _('Configures a machine as bot, please download it, confirm saving file dialog, and execute it as root/administrator') }}</p>
+                <a href="{{ url_for('main.downloadBotScript',platform='windows')}}" 
+                    id="dld-bot-scr-w" class="btn"
+                    title="{{ _('Download') }}"
+                    type="submit">
+                    <span class="icon-windows8"></span>
+                    {{ _('Download') }}
+                </a>
+                <a href="{{ url_for('main.downloadBotScript',platform='mac')}}" 
+                    id="dld-bot-scr-m" class="btn"
+                    title="{{ _('Download') }}"
+                    type="submit">
+                    <span class="icon-appleinc"></span>
+                    {{ _('Download') }}
+                </a>
+            </div>
+            <div class="b__util__card">
+                <strong>{{ _('Fix bot connection') }}</strong>
+                <p>{{ _('Fix bot connection problems') }}</p>
+                <a href="{{ url_for('main.downloadScriptFixConn',platform='windows')}}" 
+                    id="dld-bot-scr" class="btn"
+                    title="{{ _('Download') }}"
+                    type="submit">
+                    <span class="icon-windows8"></span>
+                    {{ _('Download') }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

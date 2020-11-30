@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Server error') }}{% endblock %}
+{% block app_content %}
+    <div class="b__centered">
+        <table>
+            <tr>
+                <td width="60%">
+                    <h1 class="display-4">{{ _('OOPS!') }}</h1>
+                    <label>{{ _('The server found an internal error and the request was not processed.')}}</label>
+                    <label>{{ _('Please try it again.')}}</label>
+                    <p>{{ _('The administrator has been notified. Sorry for the inconvenience!') }}</p>
+                    <p>
+                        <a class="btn btn-outline-success my-2 my-sm-0" 
+                            href="{{ url_for('main.index') }}">{{ _('Back to BOT·IC') }}</a>
+                    </p>
+                </td>
+                <td class="b__text__centered">
+                    <img src="{{ url_for('static',filename='images/500.png') }}" 
+                        alt="{{ _('An unexpected error has occurred') }}"
+                        class="b__fixed__img">
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

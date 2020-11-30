@@ -1,0 +1,149 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block html_attribs %} lang="{{g.locale}}"{% endblock %}
+
+{% block title %}
+    {% if title %}{{ title }} - BOT·IC {% else %} {{ _('Welcome to BOT·IC') }} {% endif %}
+{% endblock %}
+
+{% block navbar %}
+<div id="app-frame">
+    <div id="app-frame__header">
+        <div id="header" class="bg-clr-primary">
+            <div id="header__title">
+                <a id="title" href="{{ url_for('main.index') }}">
+                    <div id="title__icon" class="icon--left">
+                        <img class="img-responsive" src="{{ url_for('static',filename='images/nav_logo_white.png')}}" alt="BOT·IC">
+                    </div>
+
+                    <h1 id="title__text" class="fnt-clr-w">BOT·IC</h1>
+                </a>
+            </div>
+
+            <div id="header__menu">
+                <div id="menu">
+                    <div id="menu__toggle">
+                        <button id="toggle" type="button">
+                            X
+                        </button>
+                    </div>
+
+                    <div id="menu__items">
+                        <div id="items" class="items--bar">
+                            <div class="items__item">
+                                <a class="bttn-bs fnt-clr-w"><span class="icon-cogs"></span>&nbsp;{{g.locale}}</a>
+                            </div>
+
+                            <div class="items__item">
+                                <a class="bttn-bs fnt-clr-w">{{ _('BOT·IC Lab') }}</a>
+                            </div>
+
+                            {% if current_user.is_authenticated %}
+                                <div class="items__item">
+                                    <a class="bttn-bs fnt-clr-w {% if botic.is_current_route(url_for('main.index')) %}active{% endif %}" href="{{ url_for('main.index') }}">{{ _('Task execution') }} 
+                                        {% if botic.is_current_route(url_for('main.index')) %}<span class="sr-only">(current)</span>{% endif %}
+                                    </a>
+                                </div>
+
+                                <div class="items__item" {% if botic.is_current_route(url_for('main.bots_page')) %}class="active"{% endif %}>
+                                    <a class="bttn-bs fnt-clr-w" href="{{ url_for('main.bots_page') }}">{{ _('Bots') }}
+                                        {% if botic.is_current_route(url_for('main.bots_page')) %}<span class="sr-only">(current)</span>{% endif %}
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if current_user.email is not defined %}
+                                <div class="items__item" {% if botic.is_current_route(url_for('auth.login')) %}class="active"{% endif %}>
+                                    <a class="bttn-bs fnt-clr-w" href="{{ url_for('auth.login') }}">{{ _('Login') }}
+                                        {% if botic.is_current_route(url_for('auth.login')) %}<span class="sr-only">(current)</span>{% endif %}
+                                    </a>
+                                </div>
+
+                                <div class="items__item" {% if botic.is_current_route(url_for('auth.register')) %}class="active"{% endif %}>
+                                    <a class="bttn-bs fnt-clr-w bg-clr-secondary" href="{{ url_for('auth.register') }}">{{ _('Register') }}
+                                        {% if botic.is_current_route(url_for('auth.register')) %}<span class="sr-only">(current)</span>{% endif %}
+                                    </a>
+                                </div>
+                            {% endif %}
+
+
+                            {% if current_user.is_authenticated %}
+                                <div class="items__item">
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" 
+                                            data-toggle="dropdown" 
+                                            role="button" 
+                                            aria-haspopup="true" 
+                                            aria-expanded="false">{{ current_user.email }} <span class="caret"></span></a>
+                                        <ul class="dropdown-menu b__nav__bar__bg">
+                                            <li>
+                                                <a href="{{ url_for('main.profile') }}">{{ _('Profile') }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('auth.logout') }}">{{ _('Log out') }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </div>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="app-frame__body">
+        
+        <div id="container">
+            <div id="custom_messages" class="col-10 mx-auto">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <div class="alert alert-warning" role="alert">
+                            <strong>{{msg}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="{{ _('Close') }}">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+            <div id="container__main">
+                {# application content needs to be placed in app_content block #}
+                {% block app_content %}{%endblock %}
+            </div>
+                
+            <div id="loader" class="loader-box"></div>
+        </div>
+    </div>
+    
+    <div id="app-frame__footer">
+        <div id="footer" class="bg-clr-secondary fnt-clr-w">
+            <h5>{{ _('CONDOR INNOVATION & SOLUTIONS') }}</h5>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/icons.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/botic.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/fonts.css')}}"/>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+    <script type="text/javascript" src="{{url_for('static',filename='scripts/botic.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='scripts/lagcschedule.js')}}"></script>
+{% endblock %}

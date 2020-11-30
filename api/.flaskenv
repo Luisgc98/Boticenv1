@@ -1,0 +1,2 @@
+FLASK_APP=botic-api.py
+FLASK_DEBUG=1

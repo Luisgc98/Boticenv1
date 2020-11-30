@@ -1,0 +1,7 @@
+{{ _('Dear %(user)s',user=user.first_name + ' ' + user.last_name) }}
+
+{{ _('You have been registered as BOT·IC user, thanks a lot for use the plataform') }}
+
+{{ _('Your user secret identifier is %(secret)s',secret=user.user_secret) }}
+
+{{ _('The BOT·IC Team') }}

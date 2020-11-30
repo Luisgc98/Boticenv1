@@ -1,0 +1,61 @@
+{% import 'utils/pagination.html' as pagination %}
+{% import 'utils/search.html' as search %}
+<div id="bots_container">
+    <div class="b__flex__row__sb">
+        <div class="b__flex__row">
+            <div class="b__sub__titles">
+                <span class="icon-reddit"></span> {{ _('Bots') }}
+            </div>
+            <div class="b__centered">
+                <span class="icon-loop2 b__default__actions"
+                        id="btn-bot-refresh"
+                        title="{{ _('Refresh') }}">
+                </span>
+            </div>
+        </div>
+        {{ search.render_search('bots','handleBotsSearch(event)') }}
+    </div>
+    <div class="b__bots__data">
+        <table class="table table-sm table-hover">
+            <tr>
+                <td>
+                {% if bots %}
+                    <div class="b__flex__row__sb" id="bots-container">
+                    {% for b in bots.items %}
+                        <div class="b__bot__card" id="bot_{{b.bot_secret}}">
+                            <div class="b__select__card">
+                                <label class="checkbox-bs">
+                                    <input type="checkbox" name="select-bot" 
+                                            id="select-bot" data-bot-secret="{{b.bot_secret}}">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div>
+                                <div class="b__bot__card__title">
+                                    <a href="{{ url_for('main.bot',id=b.id) }}">{{b.name}}</a>
+                                </div>
+                                <div>
+                                    {% if b.is_connected %}
+                                        <span class="glyphicon glyphicon-ok-circle b__connected">
+                                            <label class="b__connected">{{ _('Connected') }}</label>
+                                        </span>
+                                    {% else %}
+                                        <span class="glyphicon glyphicon-warning-sign b__disconnected">
+                                            <label class="b__disconnected">{{ _('Disconnected') }}</label>
+                                        </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    {{ pagination.render_pagination(bots, 'handleBotsPagination', 'bots') }}
+</div>

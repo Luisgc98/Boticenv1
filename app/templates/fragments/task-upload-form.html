@@ -1,0 +1,32 @@
+<div class="modal fade" id="tasks-dialog"
+        data-backdrop="static" data-keyboard="false" 
+        tabindex="-1" role="dialog"
+        aria-labelledby="tasks-dialog-Label" 
+        aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" enctype="multipart/form-data"
+                name="frm-upload">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tasks-dialog-Label">{{ _('Upload a task') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{ g.task_upload_form.hidden_tag() }}
+                <div class="modal-body">
+                    {{ g.task_upload_form.task_name.label }}
+                    {{ g.task_upload_form.task_name(size=50,class='form-control') }}
+
+                    {{ g.task_upload_form.task_file.label }}
+                    {{ g.task_upload_form.task_file(accept=".ipynb, .txt, .py",class='form-control') }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn b__secondary__button" 
+                            data-dismiss="modal">{{ _('Close') }}</button>
+                    {{ g.task_upload_form.submit(class='btn b__primary__button',id='upload-btn') }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

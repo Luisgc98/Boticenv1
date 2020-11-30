@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}{{ _('Login Page') }}{% endblock %}
+{% block app_content %}
+    <div id="page" class="page--centered"><div>
+
+        <div id="login">
+
+            <div id="login__title">
+                <img src="{{ url_for('static',filename='images/logo_255px.png')}}" 
+                    alt="{{ _('Register new user') }}" style="height: 100px;">
+                    
+                <h3 class="fnt-clr-secondary">{{_('Login')}}</h3>
+            </div>
+
+            <form id="login__form" class="fnt-clr-secondary" action="" method="post">
+                
+                            
+                {{ form.hidden_tag() }}
+                {{ wtf.form_errors(form, hiddens="only") }}
+
+                {{ wtf.form_field(form.email) }}
+                {{ wtf.form_field(form.password) }}
+                {{ wtf.form_field(form.remember_me) }}
+
+                {{ wtf.form_field(form.submit,class='bttn-bs bttn-bs--stretch fnt-clr-w bg-clr-secondary') }}
+            </form>
+            <div id="login__help">
+
+                <p>{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a></p>
+
+                <p>
+                    {{ _('Forgot your password?') }}
+                    <a href="{{ url_for('auth.reset_password_request')}}">{{ _('Click to reset it') }}</a>
+                </p>
+            </div>
+        </div>    
+        
+    </div></div>
+{% endblock%}
+
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/pages/login.css')}}"/>
+{% endblock %}

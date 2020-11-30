@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Register new user') }}{% endblock %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block app_content %}
+    <img src="{{ url_for('static',filename='images/logo_255px.png')}}" 
+        alt="{{ _('Register new user') }}"
+        class="b__logo">
+    <h3 class="b__text__centered">{{ _('Register new user') }}</h3>
+    <div id="register-section" class="center-block"
+        data-i18n-error="{{ _('Passwords do not match, please validate') }}">
+        <form action="" method="post">
+            <div class="b__flex__row">
+                {{ form.hidden_tag() }}
+                {{ wtf.form_errors(form, hiddens="only") }}
+                <div class="b__w__400">
+                    {{ wtf.form_field(form.email,maxlength=50) }}
+                    {{ wtf.form_field(form.password) }}
+                    {{ wtf.form_field(form.confirm) }}
+                    {{ wtf.form_field(form.first_name,maxlength=50) }}
+                    {{ wtf.form_field(form.last_name,maxlength=50) }}
+                </div>
+                <div class="b__w__400">
+                    {{ wtf.form_field(form.street,maxlength=300) }}
+                    <div class="b__flex__row">
+                        {{ wtf.form_field(form.interior_number,maxlength=10) }}
+                        {{ wtf.form_field(form.exterior_number,maxlength=10) }}
+                    </div>
+                    {{ wtf.form_field(form.postal_code,maxlength=5)}}
+                    {{ wtf.form_field(form.city,maxlength=100) }}
+                    {{ wtf.form_field(form.municipality,maxlength=100) }}
+                    {{ wtf.form_field(form.state,maxlength=100) }}
+                </div>
+            </div>
+            <div class="b__flex__row">
+                {{ wtf.form_field(form.submit,class='b__default__button') }}
+            </div>
+        </form>
+        <br>
+        <br>
+    </div>
+{% endblock %}

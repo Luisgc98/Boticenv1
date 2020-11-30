@@ -1,0 +1,253 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/lagcschedule.css')}}"/>
+<div class="modal fade" id="schedule-dialog"
+        data-backdrop="static" data-keyboard="false" 
+        tabindex="-1" role="dialog" 
+        aria-labelledby="schedule-dialog-label" 
+        aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="schedule-dialog-label"
+                    data-i18n-text="{{ _('Schedule the task ') }}">
+                    {{ _('Schedule the task ') }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item active">
+                        <a onclick="periodicity('')" class="nav-link" data-toggle="tab" href="#unique_schedule" style="text-decoration: none; color: black;">Una ejecución</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="periodicity('set')" class="nav-link" data-toggle="tab" href="#repeat" style="text-decoration: none; color: black;">Ejecución repetida</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="repeat" class="tab-pane fade">
+                    <form method="POST" name="frm-schedule" id="frm-schedule">
+                        {{ g.schedule_form.hidden_tag() }}
+                        <div class="modal-body">
+                            <div id="periodicity-container" style="width: 35%;">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div data-i18n-text="{{ _('Repeat ') }}"
+                                                    id="schedule-dialog-label"
+                                                    style="margin-top: 10px; padding: 10px;">
+                                                    <h4>{{ _('Repetir: ') }}</h4>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for subfield in g.schedule_form.periodicity %}
+                                            <tr>
+                                                <td>
+                                                    <div class="page-content">
+                                                        {{ subfield }}&nbsp;&nbsp;
+                                                        {{ subfield.label }}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style=
+                                "position: absolute;
+                                top: 15px; left: 215px;
+                                background-color: #E9F1F9;
+                                width: 62%; height: 49%;
+                                "
+                                class="container">
+                                <div class="hidden"
+                                    id="minutes">
+                                    Cada {{ g.schedule_form.at_minutes(style="border-radius: 5px; padding: 3px;") }} minuto(s)
+                                </div>
+                                <div class="hidden"
+                                    id="hours">
+                                    Cada {{ g.schedule_form.at_hour(style="border-radius: 5px; padding: 3px;") }} hora(s)
+                                </div>
+                                <div class="hidden"
+                                    id="days">
+                                    Cada {{ g.schedule_form.on_day(style="border-radius: 5px; padding: 3px;") }} día(s)
+                                </div>
+                                <div class="hidden"
+                                    id="weeks">
+                                    Cada {{ g.schedule_form.at_week(style="border-radius: 5px; padding: 3px;") }} semana(s)
+                                    <div style="margin-top: 40px; margin-left: -20px;">
+                                        <input type="text" class="hidden" id="day" name="day">
+                                        <ul class="nav nav-pills"  id="days_weeks">
+                                            <li class="nav-item">
+                                                <a class="nav-link">Dom</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Lun</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Mar</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Mier</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Jue</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Vie</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Sab</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="hidden"
+                                    id="months">
+                                    Cada día {{ g.schedule_form.on_month_day(style="border-radius: 5px; padding: 3px;", id="on_month_day") }}
+                                </div>
+                                <div class="hidden"
+                                    id="years">
+                                    Cada día {{ g.schedule_form.on_month_day2(style="border-radius: 5px; padding: 3px;", id="on_month_day2") }}
+                                    <div style="margin-top: 25px; margin-left: -30px;">
+                                        <input type="text" class="hidden" id="year" name="year">
+                                        <ul class="nav nav-pills"  id="months_year1">
+                                            <li class="nav-item">
+                                                <a class="nav-link">Ene</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Feb</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Mar</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Abr</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">May</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Jun</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="nav nav-pills"  id="months_year2" style="margin-top: 5px;">
+                                            <li class="nav-item">
+                                                <a class="nav-link">Jul</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Ago</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Sep</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Oct</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Nov</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link">Dic</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container box_times" style="
+                                position: absolute;
+                                top: 215px; left: 200px;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <p style="margin-left: 20px;"><b>Fecha: <span style="margin-left: 20px;">Inicio&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Fin</span></b></p>
+                                                    <input class="form-control" type="date" required="required" id="date1" name="date1" >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="margin-top: 30px;">
+                                                    <input class="form-control" type="date" required="required" id="date2" name="date2">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <p style="margin-left: 20px;"><b>Hora: <span style="margin-left: 20px;">Inicio&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Fin</span></b></p>
+                                                    <input class="form-control" type="time" required="required" id="time1" name="time1" >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="margin-top: 30px;">
+                                                    <input class="form-control" type="time" required="required" id="time2" name="time2">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="confirmation">
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn b__secondary__button" 
+                                    data-dismiss="modal">{{ _('Close') }}</button>
+                            {% set msg = _('Please select bot(s) to execute the task') %}
+                            {{ g.schedule_form.submit(class='btn btn-primary b__primary__button'
+                                                        ,id='uniq-schedule-btn'
+                                                        ,data_i18n_error_text=msg) }}
+                        </div>
+                    </form>
+                </div>
+                <div id="unique_schedule" class="tab-pane active">
+                    <div style="padding: 20px;">
+                        <form method="POST" name="uniq-schedule" id="uniq-schedule">
+                            <div class="container modal-body">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <label for="uniq_init_date">Fecha Inicio</label><br>
+                                                    <input class="form-control" type="date" required="required" id="uniq_init_date" name="uniq_init_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <label style="margin-left: 20px;" for="uniq_init_time">Tiempo Inicio</label><br>
+                                                    <input class="form-control uniq_init_time" type="time" required="required" id="uniq_init_time" name="uniq_init_time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="uniq_confirmation" style="margin-top: 15px;" class="hidden">
+                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn b__secondary__button" 
+                                        data-dismiss="modal">{{ _('Close') }}</button>
+                                {% set msg = _('Please select bot(s) to execute the task') %}
+                                {{ g.schedule_form.submit(class='btn btn-primary b__primary__button'
+                                        ,id='schedule-btn'
+                                        ,data_i18n_error_text=msg) }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById('date1') = document.getElementById('at_week').value;
+</script>

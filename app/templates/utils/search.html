@@ -1,0 +1,12 @@
+{% macro render_search(module, callback_fn_name) %}
+<div class="b__flex__row">
+    <input type="text" name="{{module}}-search" 
+            id="{{module}}-search"
+            placeholder="{{ _('Search') }}"
+            class="b__search"
+            onkeypress="javascript:{{callback_fn_name}}">
+    <div class="b__search__img">
+        <span class="glyphicon glyphicon-search"></span>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,52 @@
+{% import 'utils/pagination.html' as pagination %}
+{% import 'utils/search.html' as search %}
+<div>
+    <div class="b__flex__row__sb">
+        <div class="b__flex__row">
+            <div class="b__sub__titles">
+                <span class="icon-clipboard"></span> {{ _('Execution history') }}
+            </div>
+            <div class="b__centered">
+                <span class="icon-loop2 b__default__actions" id="btn-task-exec-refresh" 
+                        title="{{ _('Refresh') }}">
+                </span>
+            </div>
+        </div>
+        <div class="b__min__w__25px">
+        </div>
+        {{ search.render_search('tasks-exec','handleTasksExecDetailsSearch(event)') }}
+    </div>
+    <div class="b__task__execution__det">
+        <table class="table table-condensed table-sm table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">{{ _('Registered at') }}</th>
+                    <th scope="col">{{ _('Completion Status') }}</th>
+                    <th scope="col">{{ _('Execution Status') }}</th>
+                    <th scope="col">{{ _('Type') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if exec_details %}
+                    {% for ed in exec_details.items %}
+                    <tr>
+                        <td>
+                            <div>{{ moment(ed.creation_date).format('L') }}, {{ moment(ed.creation_date).format('LTS') }}</div>
+                        </td>
+                        <td>
+                            <label class="{{ botic.status_css_class(ed.status) }}">{{ botic.status_desc(ed.status) }}</label> 
+                        </td>
+                        <td>
+                            {% if ed.execution_status %}{{ ed.execution_status }} {% endif %}
+                        </td>
+                        <td>
+                            {{ botic.bot_jobtype_desc(ed.job_type) }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {{ pagination.render_pagination(exec_details, 'handleExecDetailsPagination', 'exec-details') }}
+</div>

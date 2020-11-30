@@ -1,0 +1,84 @@
+{% import 'utils/pagination.html' as pagination %}
+{% import 'utils/search.html' as search %}
+<div id="sch_tasks_container" class="table-responsive">
+    <div class="b__flex__row__sb">
+        <div class="b__flex__row">
+            <div class="b__sub__titles">
+                <span class="icon-file-text2"></span> {{ _('Scheduled Tasks') }}
+            </div>
+            <div class="b__centered">
+                <span class="icon-loop2 b__default__actions" 
+                        id="btn-sch-task-refresh" 
+                        title="{{ _('Refresh') }}"
+                        data-task-id="{{ task_id }}">
+                </span>
+            </div>
+        </div>
+        {# { search.render_search('sch-tasks','handleSchTasksSearch(event)') } #}
+    </div>
+    {% if sch_tasks %}
+    <div id="schedules_container">
+        <div class="b__sch_tasks__data">
+            {% for sch_task in sch_tasks.items %}
+            <div class="b__task__row b__flex__centered">
+                <div class="b__centered">
+                    <div class="b__min__w__25px">
+                    </div>
+                </div>
+                <div class="b__desc">
+                    {% set when, peridicity, metadata, is_publish = sch_task.string_rep() %}
+                    <strong title="{{ peridicity }}">{{ botic.translate(when) }} {{_(' in bot %(bot)s',bot=sch_task.bot.name)}}</strong>
+                </div>
+                <div>
+                    <div id="{{sch_task.id}}" class="b__min__w__25px float-right">
+                        <span class="icon-bin b__second__actions"
+                                id="del-sch-task"
+                                data-sch-name="{{ botic.translate(when) }}"
+                                data-sch-id="{{sch_task.id}}"
+                                data-task-id="{{sch_task.task.id}}"
+                                title="{{ _('Delete is a permanent operation') }}"></span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>            
+            {{ pagination.render_pagination(sch_tasks, 'handleSchTasksPagination', 'sch_tasks') }}
+        </div>
+    {% endif %}
+    <div class="modal fade" id="confirm-sch-delete" 
+            tabindex="-1" role="dialog" 
+            aria-labelledby="conf-sch-delete-title" 
+            aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="conf-sch-delete-title"
+                        data-i18n-text="{{ _('Confirm delete of') }}">
+                        {{ _('Confirm delete of') }} 
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" 
+                            aria-label="{{ _('Close') }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-form-label">
+                            {{ _('All related jobs are going to be deleted, this action is permanent') }}
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn b__secondary__button" 
+                            data-dismiss="modal">{{ _('Close') }}</button>
+                    <button type="button" class="btn b__primary__button" 
+                            data-dismiss="modal" id="delete-task"
+                            data-from-bot="{% if bot %}{{ bot.id }}{% endif %}">
+                        {{ _('Delete') }}
+                        <span class="icon-bin"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

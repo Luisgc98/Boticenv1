@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Operation not allowed') }}{% endblock %}
+{% block app_content %}
+    <div class="b__centered">
+        <table>
+            <tr>
+                <td width="60%">
+                    <h1 class="display-4">{{ _('OOPS!') }}</h1>
+                    <label>{{ _('The operation is not allowed.')}}</label>
+                    <p>
+                        <a class="btn btn-outline-success my-2 my-sm-0" 
+                            href="{{ url_for('main.index') }}">{{ _('Back to BOT·IC') }}</a>
+                    </p>
+                </td>
+                <td class="b__text__centered">
+                    <img src="{{ url_for('static',filename='images/logo_255px.png') }}" 
+                        alt="{{ _('Resource not found') }}"
+                        class="b__fixed__img">
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

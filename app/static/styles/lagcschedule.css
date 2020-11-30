@@ -1,0 +1,39 @@
+#days_weeks li a, #months_year1 li a, #months_year2 li a{
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease;
+    padding: 7px;
+    font-size: 16px;
+    border: black 1px solid;
+    background-color: #A9C6E4;
+    width: 45px;
+    text-align: center;
+}
+#days_weeks li a:hover, #months_year1 li a:hover, #months_year2 li a:hover{
+    background-color: #1e4072;
+    color: white;
+}
+#days_weeks{
+    margin-top: 35px; margin-right: 50px;
+    width: 76%;
+    border-radius: 5px;
+    width: 351px;
+}
+#months_year1, #months_year2{
+    margin-left: 30px;
+    border-radius: 5px;
+    width: 340px;
+}
+#minutes, #hours, #days, #weeks, #months, #years{
+    position: absolute;
+    font-size: 18px;
+    top: 30px; left: 40px;
+}
+.box_times table tbody div{
+    padding: 10px;
+    width: 190px;
+}
+#uniq_init_time{
+    width: 170px; 
+    margin-left: 20px;
+}

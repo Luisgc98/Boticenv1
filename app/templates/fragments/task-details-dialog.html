@@ -1,0 +1,50 @@
+
+<div class="modal fade" id="task-details-dialog"
+        data-backdrop="static" 
+        data-keyboard="false" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="task-details-dialog-label" 
+        aria-hidden="true">
+    <div id="task-det-cntr" class="modal-dialog">
+        <div class="modal-content">
+            {% if task_det %}
+            <div class="modal-header">
+                <strong class="modal-title" 
+                    id="task-details-dialog-label"
+                    data-i18n-text="{{ _('Task %(task)s',task=task_det.name) }}">
+                    {{ _('Task %(task)s',task=task_det.name) }}
+                </strong>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="b__flex__row">
+                    <div class="b__w__200">
+                        <input type="hidden" name="task_id_det" id="task_id_det" value="{{task_det.id}}">
+                        <div class="b__sub__titles b__w__all"><strong>{{ _('Task name') }}</strong></div>
+                        <div class="b__sub__titles b__w__all">{{ task_det.name }}</div>
+                    </div>
+                    <div class="b__w__350">
+                        <div>
+                            {% set sch_tasks = task_det.get_scheduled_tasks(1) %}
+                            {% set task_id = task_det.id %}
+                            {% include 'fragments/scheduled-tasks.html' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="b__flex__row">
+                    {% set exec_details = task_det.get_execution_details() %}
+                    {% include 'fragments/task-execution-details.html' %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="modal-footer">
+                <button type="button" class="btn b__primary__button" 
+                        data-dismiss="modal">{{ _('Close') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
