@@ -72,7 +72,7 @@
       el proceso de construcción en el sistema y guardar los cambios para poder utilizarlo de manera global.
     ```bash
         $ cd Python-3.7.4
-        $ ./configure --enable-optimizations
+        $ sudo ./configure --enable-optimizations --enable-loadable-sqlite-extensions
     ```
     
     - A continuación, inicie el proceso de construcción usando el comando make -j 1. Reemplace el # 1 con la cantidad de núcleos de CPU en su sistema para un tiempo de construcción más rápido. Para saber cuántos nucleos tiene su CPU consulte el comando "nproc".
